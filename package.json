@@ -1,0 +1,19 @@
+{
+  "name": "technova-hub",
+  "version": "1.0.0",
+  "description": "TECHNOVA HUB — The Ultimate Technology Ecosystem for Students and Developers",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "start": "node server/dist/server.js",
+    "test": "node server/dist/tests/systemTest.js",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
